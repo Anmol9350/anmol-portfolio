@@ -34,6 +34,751 @@
       font-family: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       line-height: 1.6;
     }
+	.contact-panel.reveal.is-visible { display: flex!important; flex-direction: column!important;
+}
+.contact-panel.reveal.is-visible { text-align: center!important; align-items: center!important;
+}
+	.nav-links { gap: 29px; display: flex !important;  justify-content: flex-end !important; }
+    a { color: inherit; text-decoration: none; }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+    .wrap { width: min(var(--max), calc(100% - 40px)); margin-inline: auto; }
+    .nav {
+      position: sticky; top: 0; z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(16,17,20,.82);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 22px; }
+    .brand { display: flex; align-items: center; gap: 11px; font-weight: 750; letter-spacing: -.04em; }
+    .brand-mark { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 12px; background: linear-gradient(135deg, #ff9a55 0%, #ff6a2b 48%, #e94b18 100%); color: var(--accent-ink); font-weight: 900; }
+    .nav-links { display: flex; align-items: center; gap: 26px; color: var(--muted); font-size: 14px; }
+    .nav-links a:hover { color: var(--text); }
+    .button {
+      display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+      min-height: 47px; padding: 0 19px; border-radius: 999px; font-size: 14px; font-weight: 750;
+      border: 1px solid transparent; transition: transform .2s ease, background .2s ease;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { background: linear-gradient(135deg, #ff9a55 0%, #ff6a2b 48%, #e94b18 100%); color: var(--accent-ink); }
+    .button-secondary { border-color: var(--line); background: rgba(255,255,255,.03); }
+    .hero { padding: 94px 0 74px; }
+    .hero-grid { display: grid; grid-template-columns: 1.18fr .82fr; align-items: center; gap: 62px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; color: var(--accent); text-transform: uppercase; letter-spacing: .15em; font-size: 11px; font-weight: 800; }
+    .dot { width: 7px; height: 7px; border-radius: 50%; background: linear-gradient(135deg, #ffb16f, #ff6327); box-shadow: 0 0 0 5px rgba(255,122,50,.16); }
+    h1, h2, .brand, .service h3, .work-info h3, .process-step h3 { font-family: "Manrope", "Inter", sans-serif; }
+    h1 { margin: 20px 0 22px; max-width: 740px; font-size: clamp(43px, 6.2vw, 76px); line-height: 1.02; letter-spacing: -.07em; font-weight: 700; }
+    h1 span { color: var(--accent); }
+    .hero-copy { max-width: 610px; color: var(--muted); font-size: 17px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 29px; }
+    .proof { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 30px; color: var(--muted); font-size: 13px; }
+    .proof strong { color: var(--text); }
+    .hero-card { position: relative; padding: 14px; border: 1px solid var(--line); border-radius: 28px; background: linear-gradient(145deg, rgba(255,255,255,.08), rgba(255,255,255,.015)); box-shadow: 0 28px 90px rgba(0,0,0,.26); }
+    .mock-window { overflow: hidden; border-radius: 18px; background: #f4f1eb; color: #191a18; }
+    .mock-top { display: flex; align-items: center; gap: 5px; height: 33px; padding: 0 13px; background: #e8e5df; }
+    .mock-top i { width: 7px; height: 7px; border-radius: 50%; background: #b7b4ad; }
+    .mock-page { padding: 26px 23px 22px; min-height: 340px; background: linear-gradient(135deg,#f7f2e9,#e8efe0); }
+    .mock-label { color: #606653; font-size: 9px; text-transform: uppercase; letter-spacing: .16em; font-weight: 800; }
+    .mock-title { max-width: 290px; margin: 14px 0 11px; font-size: clamp(25px,3vw,39px); line-height: 1.02; letter-spacing: -.055em; font-weight: 850; }
+    .mock-description { max-width: 260px; color: #5e6258; font-size: 11px; }
+    .mock-cta { display: inline-block; margin-top: 17px; padding: 10px 13px; background: #20251a; color: white; border-radius: 5px; font-size: 10px; font-weight: 750; }
+    .mock-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 25px; }
+    .mock-cards div { min-height: 72px; padding: 11px; border-radius: 8px; background: rgba(255,255,255,.68); }
+    .mock-cards b { display: block; font-size: 10px; }
+    .mock-cards span { color: #6e7168; font-size: 8px; }
+    .floating-note { position: absolute; right: -20px; bottom: 28px; padding: 13px 16px; border: 1px solid var(--line); border-radius: 15px; background: #202229; box-shadow: 0 12px 32px #0005; font-size: 12px; }
+    .floating-note strong { display: block; color: var(--accent); font-size: 15px; }
+    section { padding: 76px 0; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 31px; }
+    .section-kicker { color: var(--accent); font-size: 11px; text-transform: uppercase; letter-spacing: .15em; font-weight: 800; }
+    h2 { margin: 8px 0 0; font-size: clamp(30px,4vw,45px); line-height: 1.1; letter-spacing: -.055em; font-weight: 600; }
+    .section-intro { max-width: 430px; color: var(--muted); font-size: 14px; }
+    .stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
+    .stat { padding: 23px; border: 1px solid var(--line); border-radius: 18px; background: rgba(255,255,255,.025); }
+    .stat strong { display: block; font-size: 30px; letter-spacing: -.05em; }
+    .stat span { color: var(--muted); font-size: 13px; }
+    .services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
+    .service { padding: 24px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); }
+    .service-icon { display: grid; place-items: center; width: 42px; height: 42px; margin-bottom: 21px; border-radius: 13px; color: var(--accent); background: rgba(255,122,50,.11); font-size: 19px; }
+    .service h3 { margin: 0 0 9px; font-size: 17px; letter-spacing: -.025em; }
+    .service p { margin: 0; color: var(--muted); font-size: 13px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 25px; }
+    .chip { padding: 8px 12px; border: 1px solid var(--line); border-radius: 999px; color: #d1d2d6; background: rgba(255,255,255,.025); font-size: 12px; }
+    .work-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 18px; }
+    .work-card { overflow: hidden; border: 1px solid var(--line); border-radius: 22px; background: var(--panel); }
+    .work-preview { min-height: 245px; padding: 25px; display: flex; align-items: center; justify-content: center; background: #dfe8d7; color: #22271e; }
+    .preview-site { width: 100%; max-width: 410px; padding: 18px; background: #f9f8f4; box-shadow: 0 14px 35px #18220e1c; }
+    .preview-nav { display: flex; justify-content: space-between; align-items: center; font-size: 8px; font-weight: 800; }
+    .preview-pill { padding: 5px 8px; border-radius: 99px; background: linear-gradient(135deg, #ff9a55, #ff6a2b); }
+    .preview-heading { margin: 29px 0 8px; max-width: 260px; font-size: clamp(21px,3vw,32px); line-height: 1.05; letter-spacing: -.05em; font-weight: 850; }
+    .preview-lines { width: 70%; height: 5px; margin: 6px 0; border-radius: 5px; background: #d9d9d1; }
+    .preview-lines.short { width: 45%; }
+    .preview-bottom { display: flex; gap: 7px; margin-top: 20px; }
+    .preview-bottom div { flex: 1; height: 48px; border-radius: 5px; background: #e9ede4; }
+    .work-card:nth-child(2) .work-preview { background: #e7d8ce; }
+    .work-card:nth-child(2) .preview-pill { background: #242421; color: white; }
+    .work-card:nth-child(3) .work-preview { background: #d6e3f1; }
+    .work-card:nth-child(3) .preview-pill { background: #375b92; color: white; }
+    .work-card:nth-child(4) .work-preview { background: #e6e2f3; }
+    .work-card:nth-child(4) .preview-pill { background: #7a63bd; color: white; }
+    .work-info { padding: 21px 22px 23px; }
+    .work-meta { color: var(--accent); font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .12em; }
+    .work-info h3 { margin: 7px 0 7px; font-size: 18px; }
+    .work-info p { margin: 0; color: var(--muted); font-size: 13px; }
+    .work-link { display: inline-flex; margin-top: 15px; color: var(--text); font-size: 12px; font-weight: 750; }
+    .work-link:hover { color: var(--accent); }
+    .process-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; }
+    .process-step { padding: 21px; border-top: 1px solid var(--line); }
+    .step-no { color: var(--accent); font-size: 11px; font-weight: 850; letter-spacing: .1em; }
+    .process-step h3 { margin: 13px 0 7px; font-size: 15px; }
+    .process-step p { margin: 0; color: var(--muted); font-size: 12px; }
+    .contact-panel { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 25px; padding: clamp(27px,5vw,52px); border: 1px solid rgba(255,122,50,.28); border-radius: 26px; background: radial-gradient(ellipse at 100% 0%, rgba(255,122,50,.22), transparent 52%), linear-gradient(135deg, #1d1a19 0%, #17191e 55%, #211713 100%); }
+    .contact-panel p { max-width: 560px; margin: 13px 0 0; color: var(--muted); font-size: 14px; }
+    footer { padding: 25px 0 35px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 17px; }
+    .footer-links a:hover { color: var(--text); }
+
+
+
+    /* Refined process timeline */
+    .process-grid {
+      position: relative; display: grid; grid-template-columns: repeat(4,minmax(0,1fr));
+      gap: 15px; margin-top: 35px;
+    }
+    .process-grid::before {
+      content: ""; position: absolute; top: 25px; left: 7%; right: 7%; height: 1px;
+      background: linear-gradient(90deg,rgba(255,123,63,.65),rgba(255,255,255,.12),rgba(255,123,63,.65));
+    }
+    .process-step {
+      position: relative; z-index: 1; padding: 0 20px 23px;
+      border: 1px solid rgba(255,244,235,.1); border-radius: 18px;
+      background: linear-gradient(160deg,rgba(255,255,255,.045),rgba(255,255,255,.012));
+      transition: transform .3s ease,border-color .3s ease,background .3s ease;
+    }
+    .process-step:hover {
+      transform: translateY(-5px); border-color: rgba(255,123,63,.4);
+      background: linear-gradient(160deg,rgba(255,123,63,.08),rgba(255,255,255,.015));
+    }
+    .process-step .step-no {
+      display: flex; align-items: center; justify-content: center;
+      width: 50px; height: 50px; margin: 0 0 18px;
+      border: 1px solid rgba(255,123,63,.45); border-radius: 50%;
+      background: #191411; color: #ff9a6b; box-shadow: 0 0 0 7px #0e0d0d;
+      font-family: "Manrope",sans-serif; font-size: 12px; letter-spacing: .02em;
+    }
+    .process-step h3 { margin-top: 0; font-size: 17px; }
+    .process-step p { font-size: 13px; line-height: 1.8; }
+    @media (max-width: 850px) {
+      .process-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .process-grid::before { display: none; }
+      .process-step { padding: 17px 18px 22px; }
+      .process-step .step-no { margin-bottom: 13px; box-shadow: none; }
+    }
+    @media (max-width: 520px) {
+      .process-grid { grid-template-columns: 1fr; gap: 12px; }
+      .process-step { display: grid; grid-template-columns: 48px 1fr; column-gap: 14px; align-items: start; }
+      .process-step .step-no { grid-row: span 2; width: 44px; height: 44px; margin: 0; }
+      .process-step h3 { margin: 2px 0 6px; }
+      .process-step p { grid-column: 2; }
+    }
+
+    /* Premium editorial layer */
+    ::selection { color: #100d0b; background: #ff9b67; }
+    .wrap { width: min(1200px, calc(100% - 48px)); }
+    .nav { background: rgba(12,12,15,.78); border-bottom-color: rgba(255,255,255,.075); }
+    .nav-inner { min-height: 82px; }
+    .brand { font-size: 16px; letter-spacing: -.055em; }
+    .brand-mark { border-radius: 13px; box-shadow: 0 5px 22px rgba(255,104,48,.24); }
+    .nav-links { gap: 30px;  }
+    .nav-links a:not(.button) { position: relative; transition: color .2s ease; }
+    .nav-links a:not(.button)::after { content: ""; position: absolute; left: 0; bottom: -7px; width: 0; height: 1px; background: var(--accent); transition: width .25s ease; }
+    .nav-links a:not(.button):hover::after { width: 100%; }
+    .hero { padding: 112px 0 92px; }
+    .hero-grid { grid-template-columns: 1.08fr .92fr; gap: clamp(45px, 7vw, 96px); }
+    .eyebrow { padding: 9px 13px; border: 1px solid rgba(255,121,63,.19); border-radius: 99px; background: rgba(255,121,63,.055); letter-spacing: .13em; }
+    h1 { font-size: clamp(49px, 6.5vw, 82px); line-height: .99; letter-spacing: -.078em; }
+    h1 span { background: linear-gradient(100deg, #ffb17d 0%, #ff793f 48%, #f45b2b 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .hero-copy { max-width: 570px; font-size: 16px; line-height: 1.85; }
+    .hero-actions { margin-top: 33px; }
+    .button { min-height: 51px; padding: 0 22px; }
+    .button-primary { box-shadow: 0 9px 30px rgba(255,106,43,.2), inset 0 1px rgba(255,255,255,.3); }
+    .button-secondary { background: rgba(255,255,255,.025); border-color: rgba(255,255,255,.15); }
+    .proof { margin-top: 37px; gap: 14px 22px; }
+    .proof span { padding-left: 12px; border-left: 1px solid rgba(255,255,255,.16); }
+    .hero-card { padding: 10px; border-radius: 25px; background: linear-gradient(145deg, rgba(255,255,255,.11), rgba(255,255,255,.018)); box-shadow: 0 38px 100px rgba(0,0,0,.4); }
+    .hero-card::before { background: conic-gradient(from 180deg, rgba(255,121,63,.4), transparent 24%, rgba(255,121,63,.09), transparent 68%, rgba(255,121,63,.25)); filter: blur(25px); }
+    .mock-window { border-radius: 17px; }
+    .mock-page { min-height: 390px; padding: 32px 29px 25px; background: radial-gradient(circle at 88% 20%, rgba(255,255,255,.9), transparent 35%), linear-gradient(140deg,#f8f2e9,#e8eddf); }
+    .mock-label { display: inline-block; padding: 6px 9px; border-radius: 4px; background: rgba(50,65,35,.08); }
+    .mock-title { font-size: clamp(30px,3.3vw,43px); max-width: 300px; margin-top: 19px; }
+    .mock-description { font-size: 12px; line-height: 1.7; }
+    .mock-cta { padding: 12px 15px; border-radius: 7px; box-shadow: 0 7px 15px #20251a20; }
+    .mock-cards { margin-top: 29px; }
+    .mock-cards div { border: 1px solid rgba(32,37,26,.06); }
+    .floating-note { right: -24px; bottom: 26px; padding: 15px 18px; border-color: rgba(255,121,63,.22); background: rgba(27,25,25,.94); backdrop-filter: blur(15px); }
+    section { padding: 91px 0; }
+    .section-head { margin-bottom: 39px; }
+    .section-kicker { font-size: 10px; letter-spacing: .18em; }
+    h2 { font-size: clamp(34px,4.2vw,50px); letter-spacing: -.065em; }
+    .section-intro { font-size: 14px; line-height: 1.85; }
+    .stats { gap: 16px; }
+    .stat { padding: 27px 28px; border-radius: 19px; background: linear-gradient(145deg, rgba(255,255,255,.045), rgba(255,255,255,.012)); }
+    .stat strong { font-family: "Manrope", sans-serif; font-size: 34px; }
+    .stat span { display: block; margin-top: 5px; }
+    .services-grid { gap: 16px; }
+    .service { min-height: 202px; padding: 27px; border-radius: 20px; background: linear-gradient(145deg, rgba(255,255,255,.045), rgba(255,255,255,.012)); }
+    .service-icon { border: 1px solid rgba(255,121,63,.12); }
+    .service h3 { font-size: 18px; letter-spacing: -.045em; }
+    .service p { font-size: 13px; line-height: 1.8; }
+    .chips { margin-top: 28px; gap: 10px; }
+    .chip { padding: 9px 14px; background: rgba(255,255,255,.018); }
+    .work-grid { gap: 20px; }
+    .work-card { border-radius: 22px; background: linear-gradient(180deg, #17171c, #121216); }
+    .work-preview { min-height: 270px; padding: 30px; }
+    .preview-site { max-width: 430px; padding: 21px; border-radius: 3px; box-shadow: 0 24px 55px #18220e25; }
+    .preview-heading { margin-top: 32px; }
+    .work-info { padding: 24px 25px 27px; }
+    .work-info h3 { font-size: 20px; letter-spacing: -.04em; }
+    .work-info p { line-height: 1.8; }
+    .work-link { gap: 7px; padding-bottom: 3px; border-bottom: 1px solid rgba(255,121,63,.3); }
+    .process-grid { gap: 18px; }
+    .process-step { padding: 23px 20px; border-top-color: rgba(255,255,255,.13); }
+    .step-no { letter-spacing: .14em; }
+    .process-step h3 { font-size: 16px; letter-spacing: -.035em; }
+    .process-step p { line-height: 1.8; }
+    .contact-panel { padding: clamp(32px,5.5vw,62px); border-radius: 28px; box-shadow: inset 0 1px rgba(255,255,255,.04); }
+    .contact-panel h2 { max-width: 650px; }
+    .contact-panel p { line-height: 1.85; }
+    footer { border-top-color: rgba(255,255,255,.08); }
+    @media (max-width: 850px) {
+      .wrap { width: min(1200px, calc(100% - 36px)); }
+      .hero { padding: 78px 0 65px; }
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-card { max-width: 560px; margin-inline: auto; }
+      .mock-page { min-height: 355px; }
+      section { padding: 68px 0; }
+    }
+    @media (max-width: 600px) {
+      .wrap { width: calc(100% - 30px); }
+      .nav-inner { min-height: 68px; }
+      .nav-links { gap: 12px; }
+      .hero { padding: 57px 0 46px; }
+      h1 { font-size: clamp(44px, 13vw, 62px); }
+      .hero-copy { font-size: 14px; line-height: 1.8; }
+      .proof { gap: 12px; }
+      .proof span { font-size: 11px; }
+      .mock-page { min-height: 340px; padding: 25px 20px 19px; }
+      .mock-title { font-size: 33px; }
+      .floating-note { right: -5px; bottom: 12px; }
+      section { padding: 56px 0; }
+      .service { min-height: auto; }
+      .work-preview { min-height: 225px; padding: 18px; }
+      .preview-site { padding: 15px; }
+      .contact-panel { padding: 27px 22px; }
+    }
+
+    /* Motion and refined visual details */
+    body { overflow-x: hidden; }
+    .hero-grid > div:first-child { animation: riseIn .85s cubic-bezier(.2,.7,.2,1) both; }
+    .hero-card { animation: cardIn 1s .12s cubic-bezier(.2,.7,.2,1) both; transform-origin: center; }
+    .hero-card::before {
+      content: ""; position: absolute; inset: -1px; z-index: -1; border-radius: inherit;
+      background: linear-gradient(135deg, rgba(255,154,85,.34), transparent 35%, rgba(233,75,24,.16));
+      filter: blur(18px); opacity: .7;
+    }
+    .mock-window { transition: transform .5s cubic-bezier(.2,.7,.2,1); }
+    .hero-card:hover .mock-window { transform: perspective(900px) rotateY(-2deg) rotateX(2deg) translateY(-3px); }
+    .button-primary { position: relative; overflow: hidden; }
+    .button-primary::after {
+      content: ""; position: absolute; top: -70%; left: -45%; width: 35%; height: 240%;
+      transform: rotate(25deg); background: rgba(255,255,255,.28); transition: left .55s ease;
+    }
+    .button-primary:hover::after { left: 130%; }
+    .service, .work-card, .stat {
+      transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease, background .3s ease;
+    }
+    .service:hover, .work-card:hover, .stat:hover {
+      transform: translateY(-5px); border-color: rgba(255,122,50,.38);
+      box-shadow: 0 18px 45px rgba(0,0,0,.2), 0 0 0 1px rgba(255,122,50,.04);
+    }
+    .service-icon { transition: transform .35s ease, background .35s ease; }
+    .service:hover .service-icon { transform: rotate(-7deg) scale(1.08); background: rgba(255,122,50,.18); }
+    .work-preview { position: relative; overflow: hidden; }
+    .work-preview::after {
+      content: ""; position: absolute; inset: 0; pointer-events: none;
+      background: linear-gradient(115deg, transparent 25%, rgba(255,255,255,.22) 48%, transparent 68%);
+      transform: translateX(-120%); transition: transform .8s ease;
+    }
+    .work-card:hover .work-preview::after { transform: translateX(120%); }
+    .preview-site { transition: transform .4s cubic-bezier(.2,.7,.2,1); }
+    .work-card:hover .preview-site { transform: translateY(-4px) scale(1.015); }
+    .floating-note { animation: floatNote 4.5s ease-in-out infinite; }
+    .dot { animation: pulseDot 2.3s ease-in-out infinite; }
+    .eyebrow { animation: fadeIn .8s .08s both; }
+    .section-head { position: relative; }
+    .section-kicker { display: inline-block; }
+    .chip { transition: color .2s ease, border-color .2s ease, background .2s ease; }
+    .chip:hover { color: #fff; border-color: rgba(255,122,50,.45); background: rgba(255,122,50,.08); }
+    .nav { transition: background .25s ease, border-color .25s ease; }
+    .nav:has(+ main) { border-bottom-color: rgba(255,255,255,.09); }
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    .services-grid .service:nth-child(2), .work-grid .work-card:nth-child(2) { transition-delay: .07s; }
+    .services-grid .service:nth-child(3), .work-grid .work-card:nth-child(3) { transition-delay: .13s; }
+    .services-grid .service:nth-child(4), .work-grid .work-card:nth-child(4) { transition-delay: .19s; }
+    @keyframes riseIn { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes cardIn { from { opacity: 0; transform: translateY(20px) scale(.975); } to { opacity: 1; transform: translateY(0) scale(1); } }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes floatNote { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+    @keyframes pulseDot { 0%,100% { box-shadow: 0 0 0 5px rgba(255,122,50,.12); } 50% { box-shadow: 0 0 0 8px rgba(255,122,50,.025); } }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+
+    @media (max-width: 850px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+      .hero { padding-top: 68px; }
+      .hero-card { max-width: 520px; }
+      .services-grid { grid-template-columns: repeat(2,1fr); }
+      .process-grid { grid-template-columns: repeat(2,1fr); }
+      .nav-links { gap: 15px; }
+    }
+    @media (max-width: 600px) {
+      .wrap { width: min(var(--max), calc(100% - 28px)); }
+      .nav-inner { min-height: 66px; }
+      .nav-links { gap: 12px; font-size: 12px; }
+      .nav-links a:nth-child(1), .nav-links a:nth-child(2) { display: none; }
+      .nav .button { min-height: 38px; padding: 0 13px; font-size: 12px; }
+      .hero { padding: 57px 0 48px; }
+      .hero-copy { font-size: 15px; }
+      .proof { gap: 10px 15px; }
+      section { padding: 54px 0; }
+      .section-head { display: block; }
+      .section-intro { margin-top: 12px; }
+      .stats { grid-template-columns: 1fr; }
+      .stat { padding: 17px 20px; }
+      .stat strong { font-size: 25px; }
+      .services-grid, .work-grid, .process-grid { grid-template-columns: 1fr; }
+      .work-preview { min-height: 215px; padding: 18px; }
+      .contact-panel { grid-template-columns: 1fr; }
+      .floating-note { right: -7px; bottom: 15px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
+    }
+
+
+    /* Compact pill navigation inspired by the supplied reference */
+    .nav {
+      position: sticky; top: 14px; z-index: 30;
+      width: min(1120px, calc(100% - 42px)); margin: 14px auto 0;
+      border: 1px solid rgba(255,255,255,.12); border-radius: 999px;
+      background: rgba(35,57,39,.96); box-shadow: 0 10px 34px rgba(0,0,0,.2);
+      backdrop-filter: blur(18px); overflow: visible;
+    }
+    .nav-inner { min-height: 62px; padding: 0 8px 0 10px; gap: 20px; }
+    .brand { gap: 9px; font-size: 14px; letter-spacing: -.035em; white-space: nowrap; }
+    .brand-mark {
+      width: 38px; height: 38px; border-radius: 50%;
+      background: linear-gradient(135deg,#ffbd36,#f08a12); color: #263c2b;
+      box-shadow: none; font-size: 17px;
+    }
+    .nav-links { flex: 1; justify-content: center; gap: clamp(13px,2.4vw,30px); }
+    .nav-links a:not(.button) { color: rgba(255,255,255,.78); font-size: 12px; }
+    .nav-links a:not(.button):hover { color: #ffc14b; }
+    .nav-links a:not(.button)::after { bottom: -8px; background: #ffc14b; }
+    .nav .button {
+      min-height: 40px; padding: 0 19px; background: #fff; color: #263c2b;
+      border: 0; font-size: 12px; white-space: nowrap; box-shadow: 0 2px 8px rgba(0,0,0,.12);
+    }
+    .nav .button:hover { background: #fff4df; }
+    @media (max-width: 760px) {
+      .nav { width: calc(100% - 24px); top: 8px; margin-top: 8px; }
+      .nav-inner { min-height: 58px; padding-left: 7px; gap: 8px; }
+      .brand { font-size: 12px; gap: 6px; }
+      .brand-mark { width: 34px; height: 34px; font-size: 15px; }
+      .nav-links { justify-content: flex-end; gap: 10px; }
+      .nav-links a:nth-child(1), .nav-links a:nth-child(2), .nav-links a:nth-child(3), .nav-links a:nth-child(4) { display: none; }
+      .nav .button { min-height: 36px; padding: 0 13px; font-size: 11px; }
+    }
+
+    /* Reference-inspired refined portfolio composition */
+    :root { --bg: #0e0d0d; --panel: #171514; --panel-2: #211c19; --text: #f7f3ef; --muted: #aaa29d; --accent: #ff7b3f; --accent-ink: #1b100a; --line: rgba(255,244,235,.12); }
+    body {
+      background:
+        radial-gradient(ellipse at 78% 5%, rgba(255,111,53,.14), transparent 34rem),
+        radial-gradient(ellipse at 8% 55%, rgba(255,111,53,.045), transparent 26rem),
+        #0e0d0d;
+    }
+    .wrap { width: min(1180px, calc(100% - 48px)); }
+    .nav { background: rgba(14,13,13,.82); border-bottom: 1px solid rgba(255,244,235,.08); }
+    .nav-inner { min-height: 78px; }
+    .brand { font-size: 16px; }
+    .brand-mark { border-radius: 50%; width: 38px; height: 38px; box-shadow: 0 0 24px rgba(255,123,63,.18); }
+    .nav-links { gap: 29px; }
+    .nav-links a:not(.button) { font-size: 13px; }
+    .hero { padding: 105px 0 86px; }
+    .hero-grid { grid-template-columns: 1.08fr .92fr; gap: clamp(40px,6vw,84px); }
+    .eyebrow { border-color: rgba(255,123,63,.2); background: rgba(255,123,63,.055); }
+    h1 { font-size: clamp(48px,6.4vw,80px); line-height: 1.01; letter-spacing: -.075em; }
+    h1 span { background: linear-gradient(100deg,#ffc19b 0%,#ff8b52 42%,#f15d2b 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .hero-copy { font-size: 16px; line-height: 1.85; max-width: 560px; }
+    .button { min-height: 50px; }
+    .button-primary { background: linear-gradient(125deg,#ffb184 0%,#ff793f 48%,#ec5528 100%); box-shadow: 0 9px 30px rgba(255,106,43,.18); }
+    .button-secondary { border-color: rgba(255,244,235,.17); }
+    .proof { gap: 12px 20px; }
+    .proof span { border-left: 1px solid rgba(255,244,235,.18); padding-left: 12px; }
+    .hero-card { padding: 10px; border-radius: 24px; background: linear-gradient(145deg,rgba(255,255,255,.1),rgba(255,255,255,.015)); box-shadow: 0 35px 95px rgba(0,0,0,.38); }
+    .mock-page { min-height: 385px; padding: 30px 28px 24px; background: radial-gradient(circle at 88% 12%,rgba(255,255,255,.9),transparent 33%),linear-gradient(135deg,#f8f1e9,#e6eadd); }
+    .mock-title { font-size: clamp(29px,3.2vw,42px); line-height: 1.02; }
+    .floating-note { border-color: rgba(255,123,63,.25); background: rgba(27,24,22,.96); }
+    section { padding: 82px 0; }
+    .section-head { margin-bottom: 35px; }
+    .section-kicker { color: #ff9a6b; letter-spacing: .17em; }
+    h2 { font-size: clamp(34px,4.3vw,49px); line-height: 1.08; letter-spacing: -.065em; }
+    .section-intro { line-height: 1.85; }
+    .stat, .service { background: linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.012)); border-color: rgba(255,244,235,.1); }
+    .stat { border-radius: 18px; }
+    .stat strong { font-family: "Manrope",sans-serif; }
+    .service { border-radius: 19px; }
+    .service-icon { background: rgba(255,123,63,.085); border: 1px solid rgba(255,123,63,.13); }
+    .work-card { background: #151414; border-color: rgba(255,244,235,.11); }
+    .work-preview { min-height: 275px; }
+    .work-info { padding: 24px 25px 27px; }
+    .work-info h3 { font-size: 20px; }
+    .work-info p { line-height: 1.8; }
+    .work-link { color: #ffb18b; border-bottom: 1px solid rgba(255,123,63,.3); padding-bottom: 3px; }
+    .process-step { border-top-color: rgba(255,244,235,.14); }
+    .contact-panel { background: radial-gradient(ellipse at 100% 0%,rgba(255,123,63,.17),transparent 55%),linear-gradient(135deg,#211a17,#171514 62%,#1e1512); border-color: rgba(255,123,63,.25); }
+    @media (max-width: 850px) {
+      .hero { padding: 72px 0 60px; }
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-card { max-width: 560px; margin-inline: auto; }
+    }
+    @media (max-width: 600px) {
+      .wrap { width: calc(100% - 30px); }
+      .hero { padding: 55px 0 45px; }
+      h1 { font-size: clamp(43px,12vw,60px); }
+      .hero-copy { font-size: 14px; }
+      .mock-page { min-height: 330px; padding: 23px 19px 18px; }
+      .mock-title { font-size: 32px; }
+      section { padding: 55px 0; }
+      .work-preview { min-height: 220px; padding: 18px; }
+    }
+
+
+    /* Cinematic portfolio intro */
+    .intro-splash {
+      position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center;
+      overflow: hidden; background: #080706; color: #fff;
+      animation: introExit .85s 3.6s cubic-bezier(.76,0,.24,1) forwards;
+    }
+    .intro-splash::before, .intro-splash::after {
+      content: ""; position: absolute; pointer-events: none; border-radius: 50%;
+      filter: blur(55px); opacity: .75;
+    }
+    .intro-splash::before {
+      width: 340px; height: 340px; left: -125px; top: -150px;
+      background: radial-gradient(circle, rgba(255,105,0,.95), rgba(255,105,0,0) 70%);
+      animation: glowDrift 4s ease-in-out infinite alternate;
+    }
+    .intro-splash::after {
+      width: 300px; height: 300px; right: -130px; bottom: -135px;
+      background: radial-gradient(circle, rgba(255,115,0,.7), rgba(255,115,0,0) 70%);
+      animation: glowDrift 4.8s ease-in-out infinite alternate-reverse;
+    }
+    .intro-bg-word {
+      position: absolute; inset: auto 0 18%; text-align: center; white-space: nowrap;
+      color: transparent; -webkit-text-stroke: 1px rgba(255,133,45,.09);
+      font-family: "Manrope", sans-serif; font-size: clamp(80px,18vw,230px);
+      line-height: .8; font-weight: 700; letter-spacing: -.08em;
+      animation: bgWordIn 1.2s .2s both;
+    }
+    .intro-content { position: relative; z-index: 2; width: min(1000px,94vw); text-align: center; }
+    .intro-kicker {
+      position: absolute; left: 3%; top: 20%; transform: rotate(-20deg);
+      color: #ff9b4a; font-size: clamp(9px,1.3vw,13px); letter-spacing: .16em;
+      font-weight: 700; text-transform: lowercase; animation: kickerIn 1s .65s both;
+    }
+    .intro-title {
+      position: relative; margin: 0; font-family: "Manrope",sans-serif;
+      font-size: clamp(54px,13.8vw,130px); line-height: .95; font-weight: 600;
+      letter-spacing: -.075em; color: #f8f7f5; animation: titleIn 1.15s .25s cubic-bezier(.16,1,.3,1) both;
+    }
+    .intro-title span { display: inline-block; }
+    .intro-orbit {
+      position: absolute; inset: -40% -9% -28%; width: 118%; height: 170%;
+      overflow: visible; pointer-events: none;
+    }
+    .intro-orbit path {
+      fill: none; stroke: #ff870f; stroke-width: 2.2; stroke-linecap: round;
+      stroke-dasharray: 1400; stroke-dashoffset: 1400;
+      filter: drop-shadow(0 0 7px rgba(255,124,13,.45));
+      animation: lineDraw 2.2s .45s ease forwards;
+    }
+    .intro-caption {
+      margin-top: 26px; color: rgba(255,255,255,.55); font-size: 10px;
+      letter-spacing: .32em; text-transform: uppercase; animation: fadeUp .8s 1.3s both;
+    }
+    .intro-progress {
+      position: absolute; left: 50%; bottom: 8%; width: 110px; height: 2px;
+      transform: translateX(-50%); background: rgba(255,255,255,.13); overflow: hidden;
+    }
+    .intro-progress::after { content: ""; display: block; height: 100%; width: 100%; background: #ff8716; transform: translateX(-100%); animation: progressIn 2.8s .3s ease forwards; }
+    @keyframes titleIn { from { opacity: 0; transform: translateY(36px); filter: blur(12px); } to { opacity: 1; transform: translateY(0); filter: blur(0); } }
+    @keyframes lineDraw { to { stroke-dashoffset: 0; } }
+    @keyframes bgWordIn { from { opacity: 0; transform: scale(1.06); } to { opacity: 1; transform: scale(1); } }
+    @keyframes kickerIn { from { opacity: 0; transform: translate(-12px,10px) rotate(-20deg); } to { opacity: 1; transform: translate(0,0) rotate(-20deg); } }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes progressIn { to { transform: translateX(0); } }
+    @keyframes glowDrift { from { transform: translate3d(0,0,0) scale(1); } to { transform: translate3d(45px,28px,0) scale(1.18); } }
+    @keyframes introExit { to { opacity: 0; visibility: hidden; pointer-events: none; } }
+    @media (max-width: 600px) {
+      .intro-bg-word { bottom: 26%; }
+      .intro-kicker { left: 2%; top: 27%; }
+      .intro-orbit { inset: -28% -15% -22%; width: 130%; height: 150%; }
+      .intro-caption { font-size: 8px; letter-spacing: .22em; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .intro-splash { animation: introExit .3s 1.2s forwards; }
+      .intro-orbit path, .intro-progress::after { animation-duration: .5s; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="intro-splash" id="introSplash" aria-label="Anmol portfolio introduction">
+    <div class="intro-bg-word" aria-hidden="true">Portfolio</div>
+    <div class="intro-content">
+      <div class="intro-kicker">creative design</div>
+      <h1 class="intro-title"><span>Portfolio</span></h1>
+      <svg class="intro-orbit" viewBox="0 0 1000 420" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M-35 245 C90 285 120 150 215 90 C300 30 380 80 315 175 C255 260 230 325 330 345 C425 360 455 235 515 150 C575 65 640 105 615 165 C590 225 540 230 600 245 C670 265 720 175 760 220 C805 270 760 365 850 370 C930 375 940 300 1040 270"/>
+      </svg>
+      <div class="intro-caption">Web design · UI/UX · Development</div>
+    </div>
+    <div class="intro-progress" aria-hidden="true"></div>
+  </div>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#home" aria-label="Anmol home">
+        <span class="brand-mark">A</span><span>Anmol<span style="color:#ffc14b">.</span></span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#work">Projects</a>
+        <a href="#process">Process</a>
+        <a class="button" href="#contact">Contact Me ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow"><span class="dot"></span> Independent Web Designer & Developer</div>
+          <h1>I design digital<br>experiences that <span>move people.</span></h1>
+          <p class="hero-copy">I’m Anmol — a web designer and developer crafting distinctive websites and conversion-focused landing pages for brands, businesses, and growing teams.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#work">Explore Selected Work <span aria-hidden="true">↗</span></a>
+            <a class="button button-secondary" href="https://www.upwork.com/freelancers/~01cd49ebe04f8eee0f?mp_source=share" target="_blank" rel="noopener noreferrer">Hire Me on Upwork</a>
+          </div>
+          <div class="proof">
+            <span><strong>6+ years</strong> experience</span>
+            <span><strong>100%</strong> Job Success Score</span>
+            <span><strong>Top Rated</strong> on Upwork</span>
+          </div>
+        </div>
+        <div class="hero-card" aria-label="Illustrative website design preview">
+          <div class="mock-window">
+            <div class="mock-top"><i></i><i></i><i></i></div>
+            <div class="mock-page">
+              <div class="mock-label">A better online experience</div>
+              <div class="mock-title">Make your next big idea happen.</div>
+              <div class="mock-description">Clear messaging, thoughtful design, and a seamless experience on every screen.</div>
+              <span class="mock-cta">LET'S GET STARTED ↗</span>
+              <div class="mock-cards">
+                <div><b>Designed for people</b><span>Simple, intuitive experiences</span></div>
+                <div><b>Built for growth</b><span>Responsive and purposeful</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="floating-note"><strong>Design → Development</strong>From Figma to a live website</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div><div class="section-kicker">About Anmol</div><h2>Good design is clear.<br>Great design feels right.</h2></div>
+          <p class="section-intro">With 6+ years in web design and development, I bring together visual thinking, practical UX, and clean implementation. I enjoy turning complex ideas into simple, useful, and memorable digital experiences.</p>
+        </div>
+        <div class="stats reveal">
+          <div class="stat"><strong>6+ Years</strong><span>Web design & development experience</span></div>
+          <div class="stat"><strong>100% JSS</strong><span>Upwork Job Success Score</span></div>
+          <div class="stat"><strong>End-to-end</strong><span>From design concepts to implementation</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div><div class="section-kicker">What I do</div><h2>Services built around<br>your business goals.</h2></div>
+          <p class="section-intro">Flexible support for businesses, founders, and agencies that need thoughtful design and reliable website execution.</p>
+        </div>
+        <div class="services-grid reveal">
+          <article class="service"><div class="service-icon">✳</div><h3>Website Design</h3><p>Modern, brand-aligned website layouts designed to build trust and make information easy to navigate.</p></article>
+          <article class="service"><div class="service-icon">↗</div><h3>Landing Page Design</h3><p>Focused landing pages with clear messaging, strong visual hierarchy, and purposeful calls to action.</p></article>
+          <article class="service"><div class="service-icon">◈</div><h3>Figma UI/UX</h3><p>Clean Figma designs, page layouts, and responsive concepts ready for development.</p></article>
+          <article class="service"><div class="service-icon">⌘</div><h3>WordPress & Elementor</h3><p>Responsive WordPress websites and custom page builds using Elementor Pro.</p></article>
+          <article class="service"><div class="service-icon">▱</div><h3>Unbounce & Duda</h3><p>Landing page implementation and website updates using practical no-code tools.</p></article>
+          <article class="service"><div class="service-icon">⌁</div><h3>Website Redesign</h3><p>Improve outdated layouts, mobile usability, consistency, and the overall user experience.</p></article>
+        </div>
+        <div class="chips" aria-label="Tools and skills">
+          <span class="chip">Figma</span><span class="chip">WordPress</span><span class="chip">Elementor Pro</span><span class="chip">Unbounce</span><span class="chip">Duda</span><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">Responsive Design</span><span class="chip">UI/UX</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div><div class="section-kicker">Selected projects</div><h2>A few things I’ve<br>designed and built.</h2></div>
+          <p class="section-intro">A curated look at my design direction across websites, landing pages, and responsive digital experiences. Open the project collections to explore my work in Figma.</p>
+        </div>
+        <div class="work-grid reveal">
+          <article class="work-card">
+            <div class="work-preview"><div class="preview-site"><div class="preview-nav"><span>STUDIO / DIGITAL</span><span class="preview-pill">Explore ↗</span></div><div class="preview-heading">A clear digital presence starts here.</div><div class="preview-lines"></div><div class="preview-lines short"></div><div class="preview-bottom"><div></div><div></div><div></div></div></div></div>
+            <div class="work-info"><div class="work-meta">Website Design · Figma</div><h3>Website Design Collection</h3><p>Website layouts focused on brand clarity, usability, and responsive structure.</p><a class="work-link" href="https://www.figma.com/design/FmEiWYqyMGJR3TJadO0Jig/Portfolio-Web-Page-Design?node-id=1-1329&t=raMAoZo2T9TE72sk-1" target="_blank" rel="noopener noreferrer">View Website Portfolio ↗</a></div>
+          </article>
+          <article class="work-card">
+            <div class="work-preview"><div class="preview-site"><div class="preview-nav"><span>GROWTH / STUDIO</span><span class="preview-pill">Get started ↗</span></div><div class="preview-heading">Turn more visits into action.</div><div class="preview-lines"></div><div class="preview-lines short"></div><div class="preview-bottom"><div></div><div></div><div></div></div></div></div>
+            <div class="work-info"><div class="work-meta">Landing Pages · Figma</div><h3>Landing Page Collection</h3><p>Campaign-focused layouts with clear hierarchy, persuasive sections, and strong CTAs.</p><a class="work-link" href="https://www.figma.com/design/ttU1MHVuLm02er7NvTorVZ/Portfolio-Landing-Pages-Design?node-id=0-1&t=raMAoZo2T9TE72sk-1" target="_blank" rel="noopener noreferrer">View Landing Page Portfolio ↗</a></div>
+          </article>
+          <article class="work-card">
+            <div class="work-preview"><div class="preview-site"><div class="preview-nav"><span>WELLNESS / CARE</span><span class="preview-pill">Book a visit ↗</span></div><div class="preview-heading">Feel better. Live brighter.</div><div class="preview-lines"></div><div class="preview-lines short"></div><div class="preview-bottom"><div></div><div></div><div></div></div></div></div>
+            <div class="work-info"><div class="work-meta">Responsive Design</div><h3>Mobile-First Experiences</h3><p>Layouts planned to stay clear, readable, and easy to use across screen sizes.</p><a class="work-link" href="https://www.figma.com/design/FmEiWYqyMGJR3TJadO0Jig/Portfolio-Web-Page-Design?node-id=1-1329&t=raMAoZo2T9TE72sk-1" target="_blank" rel="noopener noreferrer">Explore Website Designs ↗</a></div>
+          </article>
+          <article class="work-card">
+            <div class="work-preview"><div class="preview-site"><div class="preview-nav"><span>PRODUCT / DIGITAL</span><span class="preview-pill">Discover ↗</span></div><div class="preview-heading">Simple journeys. Better experiences.</div><div class="preview-lines"></div><div class="preview-lines short"></div><div class="preview-bottom"><div></div><div></div><div></div></div></div></div>
+            <div class="work-info"><div class="work-meta">UI/UX · Figma</div><h3>UI & Page Layout Concepts</h3><p>Structured page concepts that balance visual polish with practical user journeys.</p><a class="work-link" href="https://www.figma.com/design/ttU1MHVuLm02er7NvTorVZ/Portfolio-Landing-Pages-Design?node-id=0-1&t=raMAoZo2T9TE72sk-1" target="_blank" rel="noopener noreferrer">Explore Landing Pages ↗</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div><div class="section-kicker">How I work</div><h2>A clear, collaborative process.</h2></div>
+          <p class="section-intro">A straightforward workflow keeps projects organized, feedback clear, and delivery predictable.</p>
+        </div>
+        <div class="process-grid reveal">
+          <div class="process-step"><div class="step-no">01</div><h3>Understand the goal</h3><p>Review your audience, requirements, brand, and project priorities.</p></div>
+          <div class="process-step"><div class="step-no">02</div><h3>Plan the experience</h3><p>Build a clear structure and visual direction around your goals.</p></div>
+          <div class="process-step"><div class="step-no">03</div><h3>Make it responsive</h3><p>Implement the approved design and check layouts across devices.</p></div>
+          <div class="process-step"><div class="step-no">04</div><h3>Review and deliver</h3><p>Apply agreed feedback and hand over a polished final result.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="contact-panel reveal">
+          <div><div class="section-kicker">Have a project in mind?</div><h2>Let's make your next website better.</h2><p>Tell me what you're building, redesigning, or improving. I’d be happy to discuss your goals and see how I can help.</p></div>
+          <div style="display:flex;flex-wrap:wrap;gap:10px">
+            <a class="button button-primary" href="https://www.upwork.com/freelancers/~01cd49ebe04f8eee0f?mp_source=share" target="_blank" rel="noopener noreferrer">Contact on Upwork ↗</a>
+            <a class="button button-secondary" href="https://www.linkedin.com/in/anmol-kashyap-602250297/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+            <a class="button button-secondary" href="tel:+919350106657">Call: +91 93501 06657</a>
+            <a class="button button-secondary" href="https://wa.me/919350106657" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <span>© <span id="year"></span> Anmol. Designed with care.</span>
+      <div class="footer-links">
+        <a href="https://www.figma.com/design/FmEiWYqyMGJR3TJadO0Jig/Portfolio-Web-Page-Design?node-id=1-1329&t=raMAoZo2T9TE72sk-1" target="_blank" rel="noopener noreferrer">Website Portfolio</a>
+        <a href="https://www.figma.com/design/ttU1MHVuLm02er7NvTorVZ/Portfolio-Landing-Pages-Design?node-id=0-1&t=raMAoZo2T9TE72sk-1" target="_blank" rel="noopener noreferrer">Landing Page Portfolio</a>
+        <a href="https://www.upwork.com/freelancers/~01cd49ebe04f8eee0f?mp_source=share" target="_blank" rel="noopener noreferrer">Upwork</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    const introSplash = document.getElementById("introSplash");
+    window.setTimeout(() => {
+      if (introSplash) {
+        introSplash.setAttribute("aria-hidden", "true");
+        introSplash.style.pointerEvents = "none";
+      }
+    }, 3900);
+
+    // Reveal sections smoothly as they enter the viewport.
+    const revealItems = document.querySelectorAll(".reveal");
+    if ("IntersectionObserver" in window) {
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: "0px 0px -35px 0px" });
+      revealItems.forEach((item) => revealObserver.observe(item));
+    } else {
+      revealItems.forEach((item) => item.classList.add("is-visible"));
+    }
+  </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0c0c0f">
+  <meta name="description" content="Anmol is a web designer and developer specializing in Figma UI/UX, responsive websites, and conversion-focused landing pages. Contact Anmol on Upwork, LinkedIn, phone, or WhatsApp.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>Anmol — Web Designer, UI/UX & Landing Page Specialist</title>
+  <style>
+    :root {
+      --bg: #0c0c0f;
+      --panel: #151519;
+      --panel-2: #202027;
+      --text: #f4f3ef;
+      --muted: #a6a8b1;
+      --line: rgba(255,255,255,.11);
+      --accent: #ff793f;
+      --accent-ink: #17100c;
+      --max: 1160px;
+      --radius: 22px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(ellipse at 76% 4%, rgba(255,103,48,.17), transparent 31rem),
+        radial-gradient(ellipse at 5% 32%, rgba(255,103,48,.055), transparent 27rem),
+        linear-gradient(180deg, #0c0c0f 0%, #111014 48%, #0c0c0f 100%);
+      color: var(--text);
+      font-family: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
 	.contact-panel.reveal.is-visible { display: flex; flex-direction: column;
 }
 .contact-panel.reveal.is-visible { text-align: center; align-items: center;
